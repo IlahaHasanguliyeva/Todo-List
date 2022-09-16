@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #eee;
+}
+body main {
+  color: #313154;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: rgb(228, 228, 228);
+}
+body main input[type=text] {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: initial;
+}
+body main section {
+  margin: 30px 0;
+}
+body main section .greeting .title {
+  display: flex;
+  color: #313154;
+  font-size: 20px;
+  font-weight: 700;
+}
+body main section .greeting .title input {
+  margin-left: 8px;
+}
+body main section .create-todo input[type=text] {
+  display: block;
+  width: 100%;
+  font-size: 18px;
+}
+body main section h3 {
+  color: #313154;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+body main section h4 {
+  color: #888;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}/*# sourceMappingURL=index.css.map */
