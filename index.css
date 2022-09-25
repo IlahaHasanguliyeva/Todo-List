@@ -5,51 +5,190 @@
   font-family: "Montserrat", sans-serif;
 }
 
+section {
+  margin: 20px 0;
+}
+
 body {
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: center;
   background-color: #eee;
 }
 body main {
+  padding-left: 15px;
+  padding-right: 15px;
   color: #313154;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 555px;
+  margin: 2.5vh 0;
+  min-height: 95vh;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   background-color: rgb(228, 228, 228);
+  border-radius: 8px;
 }
-body main input[type=text] {
-  border: none;
-  outline: none;
-  background: none;
-  cursor: initial;
-}
-body main section {
-  margin: 30px 0;
-}
-body main section .greeting .title {
-  display: flex;
-  color: #313154;
-  font-size: 20px;
-  font-weight: 700;
-}
-body main section .greeting .title input {
-  margin-left: 8px;
-}
-body main section .create-todo input[type=text] {
-  display: block;
-  width: 100%;
-  font-size: 18px;
-}
-body main section h3 {
+body main h3 {
   color: #313154;
   font-size: 16px;
   font-weight: 400;
   margin-bottom: 8px;
 }
-body main section h4 {
+body main h4 {
   color: #888;
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 600;
   margin-bottom: 8px;
+}
+body main button {
+  border: none;
+  background: none;
+}
+body main input {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: initial;
+}
+body main input[type=radio],
+body main input[type=checkbox] {
+  display: none;
+}
+body main .bubble {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid rgb(217, 160, 255);
+  box-shadow: 0px 0px 4px rgb(217, 160, 255);
+}
+body main .personal {
+  border-color: rgb(143, 235, 86);
+  box-shadow: 0px 0px 4px rgb(143, 235, 86);
+}
+body main .bubble::after {
+  content: "";
+  display: block;
+  opacity: 0;
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  background-color: rgb(217, 160, 255);
+  box-shadow: 0px 0px 4px rgb(217, 160, 255);
+  transition: 0.2s ease-in-out;
+}
+body main .personal::after {
+  border-radius: 50%;
+  background-color: rgb(143, 235, 86);
+  box-shadow: 0px 0px 4px rgb(143, 235, 86);
+}
+body main input:checked ~ .bubble::after {
+  width: 10px;
+  height: 10px;
+  opacity: 1;
+}
+body main .greeting .title {
+  display: flex;
+  color: rgb(217, 160, 255);
+  font-size: 20px;
+  font-weight: 600;
+}
+body main .greeting .title input {
+  margin-left: 8px;
+  color: rgb(217, 160, 255);
+  font-size: 20px;
+  font-weight: 600;
+}
+body main .create-todo #new-todo-form input[type=text] {
+  display: block;
+  width: 100%;
+  font-size: 15px;
+  background-color: white;
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+body main .create-todo #new-todo-form .options {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+body main .create-todo #new-todo-form .options label {
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  text-align: center;
+  background-color: white;
+  padding: 20px 0;
+  border-radius: 5px;
+}
+body main .create-todo #new-todo-form .options label div {
+  margin-top: 14px;
+}
+body main .create-todo #new-todo-form input[type=submit] {
+  display: block;
+  width: 100%;
+  background-color: rgb(217, 160, 255);
+  box-shadow: 0px 0px 4px rgb(217, 160, 255);
+  border-radius: 5px;
+  color: white;
+  padding: 14px;
+  font-size: 14px;
+  margin-top: 11px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+body main .create-todo #new-todo-form input[type=submit]:hover {
+  opacity: 0.75;
+}
+body main .todo-list .done .todo-content input {
+  text-decoration: line-through;
+  color: #888;
+}
+body main .todo-list .list .todo-item {
+  display: flex;
+  flex-direction: row;
+  margin-top: 11px;
+  background-color: white;
+  padding: 11px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+body main .todo-list .list .todo-item label {
+  margin-right: 15px;
+  cursor: pointer;
+}
+body main .todo-list .list .todo-item .todo-content {
+  flex: 1 1 0%;
+}
+body main .todo-list .list .todo-item .todo-content input {
+  font-size: 15px;
+}
+body main .todo-list .list .todo-item .actions {
+  display: flex;
+  justify-content: center;
+}
+body main .todo-list .list .todo-item .actions button {
+  font-size: 14px;
+  padding: 3px 5px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+body main .todo-list .list .todo-item .actions button:hover {
+  opacity: 0.75;
+}
+body main .todo-list .list .todo-item .actions .edit {
+  background-color: rgb(217, 160, 255);
+  margin-right: 5px;
+}
+body main .todo-list .list .todo-item .actions .delete {
+  background-color: #ff5b57;
 }/*# sourceMappingURL=index.css.map */
